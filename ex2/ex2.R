@@ -5,6 +5,7 @@ setwd('/Users/cburkart/GoodSync Folder/Data Science/Andrew Ng AI Course/coursera
 source('sigmoid.R')
 source('costFunction.R')
 source('gradFunction.R')
+source('plotDecisionBoundary.R')
 
 
 # Load data
@@ -41,3 +42,6 @@ gradient <- gradFunction(initial_theta, X, y)[2:length(costFunction(initial_thet
 #}
 
 result <- optim(initial_theta, costFunction, gradFunction, method="BFGS", X=X, y=y, control=list(maxit=400))
+theta_final <- result$par
+# Plot the decision boundary
+plotDecisionBoundary(theta_final,X,y)

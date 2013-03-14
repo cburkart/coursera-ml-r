@@ -45,10 +45,10 @@ p <- predict(theta,X)
 message('Train Accuracy: ', mean((p == y)) * 100)
 
 # Contour plot of decision boundary
-X <- data[,1:2]
+Xbase <- data[,1:2]
 y <- data[,3]
 
-plot(X,pch=c(24,3)[y+1],bg='yellow')
+plot(Xbase,pch=c(24,3)[y+1],bg='yellow')
 legend(.8,1,c('y = 1','y = 0'),pch=c(3,23),pt.bg='yellow')
 u <- seq(from=-1, to=1.5, by=.05)
 v <- u
